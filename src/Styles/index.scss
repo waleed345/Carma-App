@@ -1,0 +1,237 @@
+@import '~antd/dist/antd.css';
+
+$primaryColor:#1890ff;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.parent-loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000bf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#app_header .ant-page-header{
+  background-color: $primaryColor;
+}
+
+.home-container{
+  row-gap: 0px;
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.movie-card{
+  .ant-card-body{
+    position: relative;
+  }
+  .rating-container{
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    .ant-progress-circle{
+      background-color: black;
+    }
+    .ant-progress-text{
+      color: white;
+    }
+  }
+}
+
+
+.main-banner{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-position: center top;
+  border-bottom: 1px solid black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px;
+  .custom-bg{
+    background-image: linear-gradient(to right, rgb(0 0 0 / 85%) 78px, rgb(0 0 0 / 75%) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.inner-section{
+  display: flex;
+  height: 100%;
+  gap: 30px;
+}
+
+.poster-section{
+  flex-basis: 300px;
+}
+
+.detail-section{
+  flex: 1;
+  z-index: 1;
+  color: white;
+  h2{
+    color: white;
+    margin-bottom: 0;
+  }
+  ul.genres-list{
+    display: flex;
+    padding-inline-start: 0;
+    list-style: none;
+    flex-wrap: wrap;
+  
+    .genre{
+      display: none;
+    }
+    .genre.on{
+      display: inline-block;
+    }
+    .genre.on ~ .genre.on:before {
+      content: ', '; 
+    }
+  }
+}
+
+.inside-detail-list{
+  display: flex;
+  flex-wrap: wrap;
+  .detail{
+    font-size: 16px;
+    margin-left: 20px;
+    &:first-of-type{
+      margin-left: 0;
+      &::marker{
+        content: '';
+      }
+    }
+  }
+}
+
+.rating{
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  span.heading{
+    line-height: 1.2;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .ant-progress-text{
+    color: white;
+  }
+}
+
+.tagline{
+  line-height: 1;
+  color: white!important;
+  opacity: 0.7;
+  font-size: 16px;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.descrption-container{
+  padding: 0 10px 0 0;
+  h4,.overview{
+    color: white;
+  }
+  .overview{
+    font-size: 16px;
+  }
+}
+
+.cast-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  h5,span{
+    margin-bottom: 0;
+    color: white;
+  }
+}
+
+.cast-flex-container{
+  padding-bottom: 10px;
+  display: flex;
+  width: calc(100vw - 80px - 270px);
+  overflow: scroll;
+  gap: 30px;
+  .cast-card{
+    width : 180px;
+    img{
+      width: 180px;
+    }
+  }
+}
+
+.bottom-section{
+  padding: 30px 40px;
+  display: flex;
+  gap: 30px;
+  .left-col{
+    flex: 1;
+  }
+  .right-col{
+    flex-basis: 270px;
+  }
+}
+
+.movie-finance-detail{
+  list-style: none;
+  li{
+    margin-bottom: 2em;
+  }
+  h5{
+    margin-bottom: 0px;
+  }
+  .financial-text{
+    font-size: 16px;
+  }
+}
+
+.keyword{
+  margin: 3px;
+  font-size: 14px;
+  color: black;
+  background-color: #0000001a;
+}
+
+.similar-movie-container{
+  .body{
+    display: flex;
+    width: calc(100vw - 80px - 270px);
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+}
